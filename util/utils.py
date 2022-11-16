@@ -31,9 +31,9 @@ def load_dataset(dataset_to_load):
 
 def best_model_name():
     """Function returns the filename that stores the best model found during training"""
-    best_aggregate_model = 'saved_model/seq2sql.agg_model'
-    best_selection_model = 'saved_model/seq2sql.sel_model'
-    best_condition_model = 'saved_model/seq2sql.cond_'
+    best_aggregate_model = './saved_model/seq2sql.agg_model'
+    best_selection_model = './saved_model/seq2sql.sel_model'
+    best_condition_model = './saved_model/seq2sql.cond_'
     return best_aggregate_model, best_selection_model, best_condition_model
 
 
@@ -152,7 +152,7 @@ def epoch_acc(model, batch_size, sql_data, table_data, save_results = False):
         pred_queries = model.gen_query(score, q_seq, col_seq,
                                        raw_q_seq, raw_col_seq)
         one_err, tot_err = model.check_accuracy(pred_queries, query_gt)
-        
+
         if save_results:
             model.save_readable_results(pred_queries, query_gt, table_ids, table_data)
 

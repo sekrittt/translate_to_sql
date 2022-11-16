@@ -11,7 +11,7 @@ from baseline.model.decoder import DecoderRNN
 from baseline.model.decoder import AttnDecoderRNN
 from util.constants import *
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
 def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, decoder_optimizer,

@@ -9,7 +9,7 @@ from seq2sql.model.condition_predictor import ConditionPredictor
 from library.table import Table
 from library.query import Query
 
-
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class Seq2SQL(nn.Module):
     """
     Seq2Sql Model which is internally comprised of three individual models
@@ -262,7 +262,7 @@ class Seq2SQL(nn.Module):
             table_id = table_ids[index]
             table_info = table_data[table_id]
             table = Table(table_id, table_info["header"], table_info["types"], table_info["rows"])
-            
+
             file.write(table.query_str(ground_truth_query_object))
             file.write("\n")
             file.write(table.query_str(predicted_query_object))
