@@ -31,15 +31,9 @@ def load_dataset(dataset_to_load):
 
 def best_model_name():
     """Function returns the filename that stores the best model found during training"""
-<<<<<<< Updated upstream
-    best_aggregate_model = './saved_model/seq2sql.agg_model'
-    best_selection_model = './saved_model/seq2sql.sel_model'
-    best_condition_model = './saved_model/seq2sql.cond_'
-=======
     best_aggregate_model = '/kaggle/working/saved_model/seq2sql.agg_model'
     best_selection_model = '/kaggle/working/saved_model/seq2sql.sel_model'
     best_condition_model = '/kaggle/working/saved_model/seq2sql.cond_'
->>>>>>> Stashed changes
     return best_aggregate_model, best_selection_model, best_condition_model
 
 
