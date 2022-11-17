@@ -9,7 +9,7 @@ def showPlot(points, plot_name):
     loc = ticker.MultipleLocator(base=0.2)
     ax.yaxis.set_major_locator(loc)
     plt.plot(points)
-    plt.savefig(plot_name + ".png")
+    plt.savefig("/kaggle/working/" + plot_name + ".png")
 
 
 def plot_data(x, y, xlabel = "x", ylabel = "y", label = 'plot'):
@@ -18,4 +18,4 @@ def plot_data(x, y, xlabel = "x", ylabel = "y", label = 'plot'):
 	plt.xlabel(xlabel)
 	plt.ylabel(ylabel)
 	print("Generating plot for ", label)
-	plt.savefig("./" + label + ".png")
+	plt.savefig("/kaggle/working/" + label + ".png")
